@@ -31,4 +31,15 @@ public class StudentRegister {
 				.findFirst()
 				.orElse(null);
 	}
+
+	// same but with for cycle
+//	private Student findStudentByName(String name) {
+//		for (Student student : students) {
+//			if(student.getName().equals(name) )
+//				return student;
+//		}
+//		return null;
+//	}
+
+
 }

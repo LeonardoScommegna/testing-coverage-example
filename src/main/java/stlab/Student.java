@@ -21,4 +21,5 @@ public class Student {
 	public void setAverage(float average) {
 		this.average = average;
 	}
+
 }

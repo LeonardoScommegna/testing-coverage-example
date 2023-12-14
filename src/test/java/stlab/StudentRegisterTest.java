@@ -15,6 +15,7 @@ public class StudentRegisterTest {
 	
 	private List<Student> students;
 	
+	
 	@Before
 	public void setup() {
 		students = new ArrayList<>();
@@ -40,6 +41,20 @@ public class StudentRegisterTest {
 	@Test
 	public void testUpdateWhenStudentIsFoundShouldChangeAverage() {
 		// setup
+		Student studentToBeFound = createStudent("studentName", 24);
+		students.add(studentToBeFound);
+		// exercise
+		studentRegister.updateStudentAverage("studentName", 28);
+		// verify
+		assertEquals(28, studentToBeFound.getAverage(), 0);
+	}
+
+	@Test
+	public void testUpdateWhenStudentIsFoundShouldChangeAverageVariant() {
+		// setup
+		Student studentNotToBeFound = createStudent("NotThestudent", 22);
+		students.add(studentNotToBeFound);
+
 		Student studentToBeFound = createStudent("studentName", 24);
 		students.add(studentToBeFound);
 		// exercise
